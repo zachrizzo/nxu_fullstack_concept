@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:8000/api/car-charge-history";
+const BASE_URL =
+  "http://ec2-54-163-202-137.compute-1.amazonaws.com:3000/api/car-charge-history";
 
 export const createChargeHistory = async (data) => {
   try {

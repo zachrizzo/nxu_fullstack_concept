@@ -5,10 +5,12 @@ import {
   setJwtToken,
   setIsAuthenticated,
   setUser,
+  selectIsAuthenticated,
 } from "../../redux/globalSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import jwtDecode from "jwt-decode";
 import { getUserById } from "../api/users";
+
 function isTokenExpired(token) {
   try {
     const decoded = jwtDecode(token);
@@ -25,6 +27,7 @@ export default function Header({ setShowLoginModal }) {
   const [openMenu, setOpenMenu] = useState(false);
   const dispatch = useDispatch();
   const dropdownRef = useRef(null);
+  const isAuthenticated = useSelector(selectIsAuthenticated);
   useEffect(() => {
     const token = localStorage.getItem("jwtToken");
 
@@ -45,7 +48,7 @@ export default function Header({ setShowLoginModal }) {
 
   useEffect(() => {
     const token = localStorage.getItem("jwtToken");
-    if (token) {
+    if (token && isAuthenticated) {
       // This will check for any falsy value including null, undefined, and empty string
       console.log("token", token);
       try {
@@ -61,7 +64,7 @@ export default function Header({ setShowLoginModal }) {
         // Handle the error appropriately, e.g., by logging out the user or showing an error message
       }
     }
-  }, [dispatch]);
+  }, [dispatch, isAuthenticated]);
 
   useEffect(() => {
     function handleOutsideClick(event) {
