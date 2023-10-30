@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const https = require("https");
 const fs = require("fs");
+const path = require("path");
 const cors = require("cors");
 const userRoutes = require("./routes/usersRoutes");
 const userCarRoutes = require("./routes/userCarRoutes");
@@ -23,14 +24,18 @@ app.use("/api/payment-history", paymentHistoryRoutes);
 app.use("/api/cars", carRoutes);
 app.use("/api/car-charge-history", carChargeHistoryRoutes);
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 // Your SSL/TLS credentials
-// const options = {
-//   key: fs.readFileSync("path/to/your/private-key.pem"),
-//   cert: fs.readFileSync("path/to/your/certificate.pem"),
-// };
+const options = {
+  key: fs.readFileSync(path.join(__dirname, "cert", "key.pem")),
+  cert: fs.readFileSync(path.join(__dirname, "cert", "cert.pem")),
+};
 
-https.createServer(app).listen(port, () => {
+// app.listen(port, () => {
+//   console.log(`listening on port ${port}...`);
+// });
+
+https.createServer(options, app).listen(port, () => {
   console.log(`listening on port ${port}...`);
 });
