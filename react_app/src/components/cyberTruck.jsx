@@ -7,7 +7,7 @@ Source: https://sketchfab.com/3d-models/cyber-truck-1f5174e78fd549a8be8f7ae622ca
 Title: Cyber Truck
 */
 
-import React, { useRef } from "react";
+import React from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function CyberTruck(props) {

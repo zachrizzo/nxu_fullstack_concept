@@ -7,11 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   setJwtToken,
   setIsAuthenticated,
-  setUser,
   selectIsAuthenticated,
 } from "../../redux/globalSlice";
-import jwtDecode from "jwt-decode";
-
 export default function LoginModal({ onClose }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
