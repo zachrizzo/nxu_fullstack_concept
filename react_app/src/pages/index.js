@@ -1,22 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { getUserById } from "../api/users";
 import { getUserCarsByUserId } from "../api/userCar";
 import { getChargeHistoryById } from "../api/carChargeHistory";
 
 import Header from "../components/header";
 import LoginModal from "../components/loginModal";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { selectIsAuthenticated, selectJwtToken } from "../../redux/globalSlice";
 import jwtDecode from "jwt-decode";
 import SegmentSelector from "../components/segmentSelector";
 import ChargeHistoryCard from "../components/chargeHistoryCard";
-import Tesla from "../components/Tesla";
+import Tesla from "../components/tesla";
 
 function App() {
-  const [user, setUser] = useState([]);
   const [userCars, setUserCars] = useState([]);
   const [showLogin, setShowLogin] = useState(false);
-  const dispatch = useDispatch();
   const jwtToken = useSelector(selectJwtToken);
   const [selectedCar, setSelectedCar] = useState(userCars[0]);
   const [carChargingHistory, setCarChargingHistory] = useState([]);
@@ -28,10 +25,6 @@ function App() {
     if (jwtToken) {
       const decodedToken = jwtDecode(jwtToken);
 
-      const fetchUser = async () => {
-        const user = await getUserById(decodedToken.id);
-        setUser(user);
-      };
       const getUserCar = async () => {
         const userCar = await getUserCarsByUserId(decodedToken.id);
 

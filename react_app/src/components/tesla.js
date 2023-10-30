@@ -1,12 +1,6 @@
 import React from "react";
-import * as THREE from "three";
 import { Canvas } from "@react-three/fiber";
-import {
-  OrbitControls,
-  Lightformer,
-  Float,
-  MeshReflectorMaterial,
-} from "@react-three/drei";
+import { OrbitControls, MeshReflectorMaterial } from "@react-three/drei";
 import { TeslaModel3 } from "./tesla_car";
 import { CyberTruck } from "./cyberTruck";
 // import { DirectionalLight } from "three";
