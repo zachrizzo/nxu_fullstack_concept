@@ -16,6 +16,7 @@ app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("hello world");
+  console.log("hello world");
 });
 
 app.use("/api/users", userRoutes);
@@ -24,7 +25,7 @@ app.use("/api/payment-history", paymentHistoryRoutes);
 app.use("/api/cars", carRoutes);
 app.use("/api/car-charge-history", carChargeHistoryRoutes);
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 
 // Your SSL/TLS credentials
 const options = {
