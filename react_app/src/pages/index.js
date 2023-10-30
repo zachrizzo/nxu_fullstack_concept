@@ -46,7 +46,7 @@ function App() {
         }
         setSelectedCar(userCar[0]);
       };
-      fetchUser();
+
       getUserCar();
     }
   }, [jwtToken]);
