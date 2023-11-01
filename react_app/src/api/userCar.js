@@ -1,7 +1,6 @@
 import axios from "axios";
 
-const BASE_URL =
-  "https://ec2-54-163-202-137.compute-1.amazonaws.com:3000/api/user-cars";
+const BASE_URL = "https://54.163.202.137:3000/api/user-cars";
 export const createUserCar = async (userCar) => {
   try {
     const response = await axios.post(BASE_URL, userCar);
