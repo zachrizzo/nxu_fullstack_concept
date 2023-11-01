@@ -53,3 +53,27 @@ To quickly test out the app, here are a few possible login options:
 I welcome any feedback or suggestions to improve this project. If you have ideas or want to contribute, please feel free to fork the repo and submit a PR.
 
 
+
+
+now that you know about my mock project and resume can you edit this message to include a link and login info for the moc website:
+Hello [Hiring Manager's Name],
+
+I hope this message finds you well. I'm writing to express my continued interest in the [Role Name] at nxu energy, and to sincerely thank you for considering my application.
+
+I understand from my discussion with Jeff that there were concerns about the diversity of skills listed on my résumé, which might have created some ambiguity about my focus on React, React Native, and Node. While it's true that my startup experience has required me to become versatile, I want to clarify that my primary specialization and passion lies in these specific technologies.
+
+To offer a bit more context:
+
+I've built a real-time data analytics dashboard using React, reducing latency by 50%.
+Led the development of a mobile app with React Native that has now been downloaded over 100,000 times with a 4.5-star rating.
+Implemented a scalable microservices architecture using Node, which improved system responsiveness by 40%.
+I have revised my résumé to better reflect this focus and would greatly appreciate the opportunity to share it with you for a second review.
+
+The mission and projects at nxu energy excite me, and I'm eager to contribute my deep technical skills to your esteemed organization. Could we possibly discuss this further at your convenience?
+
+Thank you again for your time and for considering my application. I look forward to the possibility of collaborating with you.
+
+Best regards,
+Zach Rizzo
+
+also I'm not entirely sure the position is still open so mention that.

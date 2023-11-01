@@ -72,6 +72,12 @@ function App() {
       {showLogin && <LoginModal onClose={() => setShowLogin(false)} />}
       <div className="flex h-[95vh] w-full flex-col-reverse justify-center items-center  md:flex-row ">
         <div className="w-full md:w-[20%]  md:overflow-y-scroll h-[53%] flex items-center flex-col md:h-[95%]">
+          <div className=" w-full flex justify-center items-center ">
+            <h3 className=" text-[#858585] text-xl font-bold">
+              Vehicle Charging History
+            </h3>
+          </div>
+
           {carChargingHistory.length > 0 &&
             carChargingHistory.map((history) => {
               return <ChargeHistoryCard chargeHistory={history} />;
