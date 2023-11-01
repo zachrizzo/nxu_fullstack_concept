@@ -14,10 +14,22 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+const cert = fs.readFileSync(
+  path.join(__dirname, "cert", "128770B4D1D1A804FF37324F24017AE0.txt")
+);
+
 app.get("/", (req, res) => {
   res.send("hello world");
   console.log("hello world");
 });
+
+app.get(
+  "/.well-known/pki-validation/128770B4D1D1A804FF37324F24017AE0.txt",
+  (req, res) => {
+    res.send(cert);
+    console.log("cert");
+  }
+);
 
 app.use("/api/users", userRoutes);
 app.use("/api/user-cars", userCarRoutes);
