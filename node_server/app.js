@@ -27,16 +27,16 @@ app.use("/api/car-charge-history", carChargeHistoryRoutes);
 
 const port = process.env.PORT || 3000;
 
-// Your SSL/TLS credentials
-const options = {
-  key: fs.readFileSync(path.join(__dirname, "cert", "key.pem")),
-  cert: fs.readFileSync(path.join(__dirname, "cert", "cert.pem")),
-};
+// // Your SSL/TLS credentials
+// const options = {
+//   key: fs.readFileSync(path.join(__dirname, "cert", "key.pem")),
+//   cert: fs.readFileSync(path.join(__dirname, "cert", "cert.pem")),
+// };
 
-// app.listen(port, () => {
-//   console.log(`listening on port ${port}...`);
-// });
-
-https.createServer(options, app).listen(port, () => {
+app.listen(port, () => {
   console.log(`listening on port ${port}...`);
 });
+
+// https.createServer(options, app).listen(port, () => {
+//   console.log(`listening on port ${port}...`);
+// });
